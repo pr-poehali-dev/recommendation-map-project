@@ -179,15 +179,15 @@ export default function Index() {
               { value: 30, suffix: "%", label: "макс. кэшбэк" },
               { value: 0, suffix: " ₽", label: "комиссий" },
             ].map((stat, i) => (
-              <>
-                {i > 0 && <div key={`sep-${i}`} className="w-px bg-zinc-800" />}
-                <div key={i}>
+              <div key={i} className="flex items-stretch gap-8">
+                {i > 0 && <div className="w-px bg-zinc-800" />}
+                <div>
                   <div className="text-2xl font-black text-yellow-400">
                     <CountUp end={stat.value} suffix={stat.suffix} />
                   </div>
                   <div className="text-zinc-500 text-sm mt-0.5">{stat.label}</div>
                 </div>
-              </>
+              </div>
             ))}
           </div>
         </div>
